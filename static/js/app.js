@@ -34,13 +34,45 @@ function runEnter() {
     console.log(matches); 
 
     matches.forEach((match) => {
+    if (matches.length) 
+    {
         var row = tbody.append("tr");
         Object.entries(match).forEach(([key, value]) => {
         var cell = row.append("td");
-        cell.text(value);
+        cell.text(value);})}
+    else
+    {   
+        var row =tbody.append("tr");
+        var cell = row.append("td");
+        cell.text("No results found")}
+    
+        }
 
-                    }  
-                )  
-            }
         )
     }
+
+
+
+function RestoreValues() {
+    var arrInputs = d3.select("#datetime");
+    for (var i = 0; i < arrInputs.length; i++) {
+        var oCurInput = arrInputs[i];
+        if (oCurInput.type == "text")
+            oCurInput.value = oCurInput.defaultValue;
+        }
+    location.reload();
+    }
+
+function showAll (){
+
+    tableData.forEach(event => {
+    var row = tbody.append("tr");
+        Object.entries(event).forEach(([key, value]) => {
+        var cell = row.append("td");
+        cell.text(value);})
+    }
+    )
+}
+
+
+
