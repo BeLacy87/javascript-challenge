@@ -32,21 +32,31 @@
             <div class="panel panel-default">
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
-                <form>
-
-
-                  
+                <form >                  
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Search </label>                                               
-                        <input class="form-control" id="datetime" type="text" placeholder="e.g, date, state, city">
-                        <label for="date">*(1/1/2010-1/13/2010)</label> 
+                        <label for="date">Search by date </label>                                               
+                        <input class="form-control" id="datetime" type="text" placeholder="(1/1/2010-1/13/2010)">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="date">Search by country </label>                                               
+                        <input class="form-control" id="country" type="text" placeholder="e.g, us, uk...">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="date">Search by state </label>                                               
+                        <input class="form-control" id="state" type="text" placeholder="e.g, sc, nj...">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="date">Search by city </label>                                               
+                        <input class="form-control" id="city" type="text" >
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="date">Search by shape </label>                                               
+                        <input class="form-control" id="shape" type="text" placeholder="e.g, square, icosahedron">
                       </li>
                     </ul>
-                  </div>
-                  
-                  
+                  </div>              
                   <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
                   <button id="restore-btn" type="button" class="btn btn-default">Reset</button>
                   <button id="all-btn" type="button" class="btn btn-default" >Show all entries</button>
