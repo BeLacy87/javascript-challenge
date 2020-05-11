@@ -112,6 +112,7 @@ function RestoreValues() {
     }
 
 function showAll (){
+    d3.selectAll("td").remove();
     tableData.forEach(event => {
     var row = tbody.append("tr");
         Object.entries(event).forEach(([key, value]) => {
