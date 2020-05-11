@@ -2,17 +2,24 @@
 var tableData = data;
 
 //select elements from index.html
-var button = d3.select("#filter-btn");
+var filterButton = d3.select("#filter-btn");
+var restoreButton = d3.select("#restore-btn");
+var allButton = d3.select("#all-btn");
+
 var form = d3.select("form");
 var tbody=d3.select("tbody");
 //set up handlers
-button.on("click", runEnter);
+
+filterButton.on("click", runEnter);
+restoreButton.on("click", RestoreValues);
+allButton.on("click", showAll);
 form.on("submit",runEnter);
 
+// $("#table_of_items tbody tr").remove();
 
 // Complete the event handler function for the form
 function runEnter() {
-
+  d3.selectAll("tr").remove();
   d3.event.preventDefault();
   // Select the input element and get the raw HTML node
   var inputElement = d3.select("#datetime");
@@ -54,12 +61,12 @@ function runEnter() {
 
 
 function RestoreValues() {
-    var arrInputs = d3.select("#datetime");
-    for (var i = 0; i < arrInputs.length; i++) {
-        var oCurInput = arrInputs[i];
-        if (oCurInput.type == "text")
-            oCurInput.value = oCurInput.defaultValue;
-        }
+    // var arrInputs = d3.select("#datetime");
+    // for (var i = 0; i < arrInputs.length; i++) {
+    //     var oCurInput = arrInputs[i];
+    //     if (oCurInput.type == "text")
+    //         oCurInput.value = oCurInput.defaultValue;
+    //     }
     location.reload();
     }
 
@@ -73,6 +80,7 @@ function showAll (){
     }
     )
 }
+
 
 
 
